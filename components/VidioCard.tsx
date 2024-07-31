@@ -1,23 +1,27 @@
-import Image from "next/image";
+// import Image from "next/image";
+// import Link from "next/link";
 
-const VideoCard = () => {
-  return (
-    <div className="max-w-sm bg-gray-900 text-white rounded-lg overflow-hidden shadow-lg">
-      <div className="relative">
-        <Image
-          src="/mnt/data/image.png"
-          alt="Bulbuli | Coke Studio Bangla"
-          width={400}
-          height={400}
-          className="w-full h-auto"
-        />
-        <div className="absolute bottom-0 left-0 p-4 bg-black bg-opacity-50 w-full">
-          <h3 className="text-lg font-bold">Bulbuli | Coke Studio Bangla</h3>
-          <p className="text-sm">Season One | Ritu Raj X Nandita</p>
-        </div>
-      </div>
-    </div>
-  );
-};
+// const VideoItem = ({ video }: { video: any }) => {
+//   return (
+//     <div className="max-w-sm bg-gray-900 text-white rounded-lg overflow-hidden shadow-lg">
+//       <div className="relative">
+//         <Link href={`/videos/${video.id.videoId}`}>
+//           <Image
+//             width={500}
+//             height={500}
+//             alt=""
+//             src={video.snippet.thumbnails.medium.url}
+//           />
+//         </Link>
+//         <div className="absolute bottom-0 left-0 p-4 bg-black bg-opacity-50 w-full">
+//           <h3 className="text-lg font-bold">
+//             {video.snippet.channelTitle.slice(0, 20)}
+//           </h3>
+//           <p className="text-sm">{video.snippet.title.slice(0, 15)} ...</p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
-export default VideoCard;
+// export default VideoItem;

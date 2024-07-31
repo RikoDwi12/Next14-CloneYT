@@ -15,6 +15,7 @@ export function SearchInput() {
         onChange={(e) => setSearch(e.target.value)}
         type="text"
         placeholder="Cari Vidio favoritmu"
+        className="rounded-full"
       />
       <Button
         onClick={() => router.push(`/videos?query=${search}`)}

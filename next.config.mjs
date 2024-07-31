@@ -7,6 +7,12 @@ const nextConfig = {  images: {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'akcdn.detik.net.id',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },};
 

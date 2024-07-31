@@ -1,11 +1,14 @@
+import CardSideBar from "@/components/CardSideBar";
+import { ModeToggle } from "@/components/modeToggle";
 import { SearchInput } from "@/components/SearchInput";
 import { Button } from "@/components/ui/button";
-import LogoYt from "@/components/ui/logoYt";
 import VideoList from "@/components/videos/VideoList";
 import { apiKey } from "@/lib/constans";
 import Link from "next/link";
 import React from "react";
-import { FaAlignJustify } from "react-icons/fa";
+import { FaAlignJustify, FaCompass, FaHome, FaPlay } from "react-icons/fa";
+import { FaRegBell } from "react-icons/fa";
+import { FaTh } from "react-icons/fa";
 
 async function fetchVideos(query: string) {
   let url = new URL(
@@ -29,30 +32,43 @@ export default async function Videos({
   searchParams: { [key: string]: string };
 }) {
   const videos = await fetchVideos(searchParams.query);
+
   return (
     <>
       {/* warps div */}
       <div className="my-[10px] mx-[10px] ">
         <div className=" flex flex-row">
-          <div className="w-1/4 bg-yellow-500">
+          {/* konten */}
+          <div className="w-1/4 bg-slate-400 rounded-sm">
             <div className="flex flex-row items-center  p-2">
-              <FaAlignJustify className="text-4xl p-2" />
+              <FaAlignJustify className="text-4xl p-2 " />
             </div>
+            {/* kiri 1 */}
+            <CardSideBar />
+            <hr className=" border-slate-100" />
+            {/* konten kiri 2 */}
+            <CardSideBar />
+            <hr className=" border-slate-100" />
+            {/* konten kiri 3 */}
+            <CardSideBar />
+            <hr className="border-slate-100" />
+            {/* konten kiri 4 */}
+            <CardSideBar />
           </div>
           {/* konten kanan */}
-          <div className="w-full mx-[10px] my-[10px]">
+          <div className="w-full mx-[10px] my-[5px]">
             {/* search */}
             <div className="flex justify-between items-center mb-5">
               <SearchInput />
-              <div
-                className="bg-red-50
-              0 flex flex-row justify-end"
-              >
-                <div>1</div>
-                <div>2</div>
+              <div className="flex flex-row justify-end gap-2">
+                <FaRegBell className="text-4xl p-2" />
+                <FaTh className="text-4xl p-2" />
+                <FaRegBell className="text-4xl p-2" />
+                <ModeToggle />
               </div>
             </div>
-            <div className="mb-[10px] flex flex-row gap-2 ">
+            <hr className="p-1 border-slate-100 dark:border-white" />
+            <div className="mb-[10px] flex flex-row gap-2 overflow-x-auto whitespace-nowrap p-2">
               <Button className="bg-white rounded-full">All</Button>
               <Button className=" rounded-full">Cook Studio</Button>
               <Button className=" rounded-full">UX</Button>
@@ -63,9 +79,9 @@ export default async function Videos({
               <Button className=" rounded-full">Saintmartin</Button>
               <Button className=" rounded-full">Tech</Button>
               <Button className=" rounded-full">iPhone 13</Button>
-              <Button className=" rounded-full">User Interface Design</Button>
             </div>
-            <div className="mt-6">
+            <hr className="p-1 border-slate-100 dark:border-white" />
+            <div className="mt-1">
               <VideoList videos={videos} />
             </div>
           </div>

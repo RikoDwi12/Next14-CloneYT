@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["cyrillic"] });
 
 export const metadata: Metadata = {
-  title: "Mobil`is Web",
+  title: "Web App`s",
   icons: {
     icon: ["/favicon.ico"],
   },
